@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FeatureFlippingApi.Tests/FeatureFlippingApi.Tests.csproj" />
+  <Project Path="FeatureFlippingApi/FeatureFlippingApi.csproj" />
+</Solution>

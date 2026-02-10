@@ -1,0 +1,6 @@
+@FeatureFlippingApi_HostAddress = http://localhost:5078
+
+GET {{FeatureFlippingApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
