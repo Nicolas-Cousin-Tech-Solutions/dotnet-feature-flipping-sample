@@ -1,6 +1,37 @@
 @FeatureFlippingApi_HostAddress = http://localhost:5078
 
-GET {{FeatureFlippingApi_HostAddress}}/weatherforecast/
+### Health Check (Always Available)
+GET {{FeatureFlippingApi_HostAddress}}/api/health
+Accept: application/json
+
+###
+
+### Weather Forecast (Feature Flag: EnableWeatherForecast)
+# When enabled: Returns weather forecast data (200 OK)
+# When disabled: Returns 503 Service Unavailable
+GET {{FeatureFlippingApi_HostAddress}}/api/weather
+Accept: application/json
+
+###
+
+### Get All Products (Feature Flag: EnableProductCatalog)
+# When enabled: Returns list of products (200 OK)
+# When disabled: Returns 503 Service Unavailable
+GET {{FeatureFlippingApi_HostAddress}}/api/products
+Accept: application/json
+
+###
+
+### Get Product by ID (Feature Flag: EnableProductCatalog)
+# When enabled: Returns product details (200 OK) or 404 if not found
+# When disabled: Returns 503 Service Unavailable
+GET {{FeatureFlippingApi_HostAddress}}/api/products/1
+Accept: application/json
+
+###
+
+### Get Product by ID - Not Found (Feature Flag: EnableProductCatalog)
+GET {{FeatureFlippingApi_HostAddress}}/api/products/999
 Accept: application/json
 
 ###
